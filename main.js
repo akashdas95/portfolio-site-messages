@@ -18,14 +18,14 @@ document.getElementById("getMessage").addEventListener("click", getMessage);
 let showMessage = document.getElementById("showMessage");
 
 
-async function getMessage(){
+function getMessage(){
     let message = `all messages`
-    await messagesRef.once("value", (snapshots)=>{
+    messagesRef.once("value", (snapshots)=>{
       snapshots.forEach((snapshot)=>{
       message += `
-        <h2> ${snapshot.val().name} </h2>
-        <h3> ${snapshot.val().email} </h3>
-        <p> ${snapshot.val().message} </p>
+        <h2>name: ${snapshot.val().name} </h2>
+        <h3>email: ${snapshot.val().email} </h3>
+        <p>message: ${snapshot.val().message} </p>
        `
      })
 
