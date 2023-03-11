@@ -14,8 +14,7 @@ firebase.initializeApp(firebaseConfig);
 let messagesRef = firebase.database().ref("messages");
 
 
-
-document.getElementById("getMessage"),addEventListener("click", getMessage);
+document.getElementById("getMessage").addEventListener("click", getMessage);
 let showMessage = document.getElementById("showMessage");
 
 
@@ -31,7 +30,6 @@ async function getMessage(){
      })
 
      showMessage.innerHTML = message;
-     message.style.color = `red`;
    })   
 }
 
